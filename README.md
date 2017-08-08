@@ -29,9 +29,11 @@ Predict survival on the Titanic
 
 #2.1	Initial works
 #Load packages
+
 library(tree)
 library(dplyr)
 #Set up Working directory
+
 setwd('c:/Kaggle') #Location where you saved train.csv and test.csv files.
 
 #We need to Combine train.csv and test.csv files in order to fill up the missing values. I will change brank cells to NAs as it is easier to fill up the missing values. 
