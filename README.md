@@ -31,9 +31,11 @@ I will use tree function to make Machine Learning model. So people who have not 
 #2.1	Initial works
 #Load packages
 
-```library(tree)
+```
+library(tree)
 library(dplyr)
-#Set up Working directory```
+```
+#Set up Working directory
 
 setwd('c:/Kaggle') #Location where you saved train.csv and test.csv files.
 
