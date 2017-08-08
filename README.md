@@ -18,7 +18,7 @@
 
 
 
-[### 1.	Introduction](preparation)
+### [1.	Introduction](preparation)
 I looked other scripts and it was amazing to see their unique ideas for solving the Titanic problem. However, I found out that those methods could be bit complicated for the beginners. Accordingly, the purpose for writing this is to help the people who just wanted to become a data scientist. 
 
 ##### 1.1	Key point for solving the problem
