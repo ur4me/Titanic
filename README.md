@@ -3,19 +3,18 @@
 
 ### Table of contents
 
-### - 1.	Introduction
-##### - 1.1	Key point for solving the problem
+- ### 1.	Introduction
+- ##### 1.1	Key point for solving the problem
+- ### 2.	Preparation
+- ##### 2.1	Initial works
+- ##### 2.2	Adding new column
+- ##### 2.3  Filling up missing values
 
-### - 2.	Preparation
-##### - 2.1	Initial works
-##### - 2.2	Adding new column
-##### - 2.3  Filling up missing values
+- ### 3.	Prediction
+- ##### 3.1	Split in to training and test sets
+- ##### 3.2	prediction
 
-### - 3.	Prediction
-##### - 3.1	Split in to training and test sets
-##### - 3.2	prediction
-
-### - 4.	Conclusion
+- ### 4.	Conclusion
 
 
 
