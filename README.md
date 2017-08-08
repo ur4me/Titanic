@@ -1,6 +1,7 @@
 # **titanic**
-Predict survival on the Titanic
+*Predict survival on the Titanic*
 
+### Table of contents
 
 ### 1.	Introduction
 ##### 1.1	Key point for solving the problem
@@ -30,9 +31,9 @@ I will use tree function to make Machine Learning model. So people who have not 
 #2.1	Initial works
 #Load packages
 
-library(tree)
+```library(tree)
 library(dplyr)
-#Set up Working directory
+#Set up Working directory```
 
 setwd('c:/Kaggle') #Location where you saved train.csv and test.csv files.
 
@@ -78,7 +79,7 @@ colnames(total)[colSums(is.na(total)) > 0]
 [1] "Survived" "Age"      "Fare"     "Cabin"    "Embarked" "Deck" 
 
 #We don't need to fill up the missing values in Cabin column as not only it contains more than 32 levels, but also we already retrieved more meaningful values to Deck column. As we will predict the survivors in the final step, we should fill up the missing values. I will use tree function to expect the missing values. In order to use tree function, Char need to be changed to Factor.
-
+`
 #Change Char to Factor
 total <- as.data.frame(unclass(total))
 
