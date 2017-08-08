@@ -34,7 +34,7 @@ library(dplyr)
 #Set up Working directory
 setwd('c:/Kaggle') #Location where you saved train.csv and test.csv files.
 
-#We need to Combine train.csv and test.csv files in order to fill up the missing values. I will change brank cells to ?쏯A?? as it is easier to fill up the missing values. 
+#We need to Combine train.csv and test.csv files in order to fill up the missing values. I will change brank cells to NAs as it is easier to fill up the missing values. 
 
 #Combine train.csv and test.csv files
 train <- read.csv('train.csv', na.strings = c("", "NA"), stringsAsFactors = F)
