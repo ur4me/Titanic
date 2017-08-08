@@ -3,7 +3,7 @@ Predict survival on the Titanic
 
 
 ### 1.	Introduction
-####### 1.1	Key point for solving the problem
+##### 1.1	Key point for solving the problem
 
 ### 2.	Preparation
 ##### 2.1	Initial works
@@ -18,11 +18,11 @@ Predict survival on the Titanic
 
 
 
-#1.	Introduction
-#I looked other scripts and it was amazing to see their unique ideas for solving the Titanic problem. However, I found out that those methods could be bit complicated for the beginners. Accordingly, the purpose for writing this is to help the people who just wanted to become a data scientist. 
+### 1.	Introduction
+I looked other scripts and it was amazing to see their unique ideas for solving the Titanic problem. However, I found out that those methods could be bit complicated for the beginners. Accordingly, the purpose for writing this is to help the people who just wanted to become a data scientist. 
 
-#1.1	Key point for solving the problem
-#I will use tree function to make Machine Learning model. So people who have not installed the package need to type install.packages(tree) in the Console. To set up the tree model, it is really important to know the types of variables and need to change the types to appropriate ones. 
+##### 1.1	Key point for solving the problem
+I will use tree function to make Machine Learning model. So people who have not installed the package need to type install.packages(tree) in the Console. To set up the tree model, it is really important to know the types of variables and need to change the types to appropriate ones. 
 
 
 #2.	Preparation
