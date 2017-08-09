@@ -1,11 +1,11 @@
-# **titanic**
+# **Titanic**
 *Predict survival on the Titanic*
 
 ### Table of contents
 
 
 - [1. Introduction](#introduction)
--   [1.1. Key point for solving the problem](#1.1	Key point for solving the problem)
+-   [1.1. Key point for solving the problem](#1.1	key point for solving the problem)
 - ### 2.	Preparation
 - ##### 2.1	Initial works
 - ##### 2.2	Adding new column
