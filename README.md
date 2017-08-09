@@ -2,8 +2,9 @@
 *Predict survival on the Titanic*
 
 ### Table of contents
+[TOC]
 
-- ### [1.	Introduction](#2.	Preparation)
+- ### 1.	Introduction
 - ##### 1.1	Key point for solving the problem
 - ### 2.	Preparation
 - ##### 2.1	Initial works
