@@ -3,33 +3,29 @@
 
 ### Table of contents
 
-
-- [Introduction](#Introduction)
+- [Introduction](#introduction)
 - [Preparation](#preparation)
 - [Prediction](#prediction)
 - [Conclusion](#conclusion)
 
 
-
 ### Introduction
-I looked other scripts and it was amazing to see their unique ideas for solving the Titanic problem. However, I found out that those methods could be bit complicated for the beginners. Accordingly, the purpose for writing this is to help the people who just wanted to become a [data](# **titanic**) scientist. 
-
-### Key point for solving the problem
-I will use tree function to make Machine Learning model. So people who have not installed the package need to type install.packages(tree) in the Console. To set up the tree model, it is really important to know the types of variables and need to change the types to appropriate ones. 
+This is my first project that is uploaded on github so there should be much better way to predict the survivors.
+As for this time, I will use tree function to make Machine Learning model. In order to use tree function, it is really important to know the types of variables so that I can change the types to appropriate ones. 
 
 
 ### Preparation
 
-#2.1	Initial works
+######	Initial works
 ```
 #Load packages
 library(tree)
 library(dplyr)
 ```
-
+```
 #Set up Working directory
-
-setwd('c:/Kaggle') #Location where you saved train.csv and test.csv files.
+setwd('c:/Kaggle') #Location where I saved train.csv and test.csv files
+````
 
 #We need to Combine train.csv and test.csv files in order to fill up the missing values. I will change brank cells to NAs as it is easier to fill up the missing values. 
 
