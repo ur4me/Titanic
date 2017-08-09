@@ -3,7 +3,7 @@
 
 ### Table of contents
 
-- ### 1.	Introduction
+- ### [1.	Introduction](https://github.com/ur4me/titanic#1introduction-1)
 - ##### 1.1	Key point for solving the problem
 - ### 2.	Preparation
 - ##### 2.1	Initial works
