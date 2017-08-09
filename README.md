@@ -4,7 +4,7 @@
 ### Table of contents
 
 
-- [Introduction](#introduction)
+- [1. Introduction](#introduction)
 - ##### 1.1	Key point for solving the problem
 - ### 2.	Preparation
 - ##### 2.1	Initial works
