@@ -5,7 +5,7 @@
 
 
 - [1. Introduction](#Introduction)
-- [2. Preparation](#2.preparation)
+- [2. Preparation](### 2.Preparation)
 - ##### 2.1	Initial works
 - ##### 2.2	Adding new column
 - ##### 2.3  Filling up missing values
