@@ -5,7 +5,7 @@
 
 
 - [1. Introduction](#introduction)
-- ##### 1.1	Key point for solving the problem
+-   [1.1. Key point for solving the problem](#1.1	Key point for solving the problem)
 - ### 2.	Preparation
 - ##### 2.1	Initial works
 - ##### 2.2	Adding new column
@@ -19,7 +19,7 @@
 
 
 
-##### Introduction
+### Introduction
 I looked other scripts and it was amazing to see their unique ideas for solving the Titanic problem. However, I found out that those methods could be bit complicated for the beginners. Accordingly, the purpose for writing this is to help the people who just wanted to become a [data](# **titanic**) scientist. 
 
 ##### 1.1	Key point for solving the problem
