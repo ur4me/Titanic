@@ -5,7 +5,7 @@
 
 
 - [1. Introduction](#introduction)
-- [2. Preparation](#preparation)
+- [2. Preparation](#2.Preparation)
 - ##### 2.1	Initial works
 - ##### 2.2	Adding new column
 - ##### 2.3  Filling up missing values
@@ -25,7 +25,7 @@ I looked other scripts and it was amazing to see their unique ideas for solving 
 I will use tree function to make Machine Learning model. So people who have not installed the package need to type install.packages(tree) in the Console. To set up the tree model, it is really important to know the types of variables and need to change the types to appropriate ones. 
 
 
-###2.Preparation
+### 2.Preparation
 
 #2.1	Initial works
 ```
