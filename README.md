@@ -26,15 +26,15 @@ library(dplyr)
 ```
 #Set up Working directory
 setwd('c:/Kaggle') #Location where I saved train.csv and test.csv files
-````
+```
 
-#We need to Combine train.csv and test.csv files in order to fill up the missing values. I will change brank cells to NAs as it is easier to fill up the missing values. 
-
+We need to Combine train.csv and test.csv files in order to fill up the missing values. I will change brank cells to NAs as it is easier to fill up the missing values. 
+```
 #Combine train.csv and test.csv files
 train <- read.csv('train.csv', na.strings = c("", "NA"), stringsAsFactors = F)
 test <- read.csv('test.csv', na.strings = c("", "NA"), stringsAsFactors = F)
 total <- bind_rows(train, test)
-
+```
 #2.2	Adding new column
 #It would be really good if we can make as many new variables as possible. However, in order to use tree function, factor predictors must have at most 32 levels. In other words, actual people's name and ticket numbers will not play important role in the prediction as they have more than 32 levels. But the title which is stated in their name will be really meaningful as it will have less than 32 levels. Furthermore, we can retrieve deck names from Cabin Column. Lastly, we can make family size column from SibSp and Parch column.
 
