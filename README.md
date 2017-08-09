@@ -1,7 +1,7 @@
 # **Titanic**
 *Predict survival on the Titanic*
 
-### Table of contents
+## Table of contents
 
 - [Introduction](#introduction)
 - [Preparation](#preparation)
@@ -15,8 +15,7 @@ This is my first project that is uploaded on github so there should be much bett
 As for this time, I will use tree function to make Machine Learning model. In order to use tree function, it is really important to know the types of variables so that I can change the types to appropriate ones. 
 
 
-### Preparation
-===============
+## Preparation
 
 ######	Initial works
 ```
