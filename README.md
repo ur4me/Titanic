@@ -19,7 +19,7 @@
 
 
 
-### [1.	Introduction](./)
+### [1.	Introduction](README.md/./)
 #2.	Preparation
 I looked other scripts and it was amazing to see their unique ideas for solving the Titanic problem. However, I found out that those methods could be bit complicated for the beginners. Accordingly, the purpose for writing this is to help the people who just wanted to become a [data](# **titanic**) scientist. 
 
