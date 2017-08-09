@@ -12,7 +12,7 @@
 ### Introduction
 This is my first project that is uploaded on github so there should be much better way to predict the survivors.
 As for this time, I will use tree function to make Machine Learning model. In order to use tree function, it is really important to know the types of variables so that I can change the types to appropriate ones. 
-
+=================================
 
 ### Preparation
 
