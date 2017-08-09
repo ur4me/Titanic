@@ -8,6 +8,7 @@
 - [Prediction](#prediction)
 - [Conclusion](#conclusion)
 
+<!-- /MarkdownTOC -->
 
 ### Introduction
 This is my first project that is uploaded on github so there should be much better way to predict the survivors.
