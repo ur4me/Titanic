@@ -3,7 +3,7 @@
 
 ### Table of contents
 
-- ### [1.	Introduction](28)
+- ### [1.	Introduction](#2.	Preparation)
 - ##### 1.1	Key point for solving the problem
 - ### 2.	Preparation
 - ##### 2.1	Initial works
