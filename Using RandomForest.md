@@ -107,6 +107,9 @@ text(x=1:length(cooksd)+1, y=cooksd, labels=ifelse(cooksd>4*mean(cooksd, na.rm=T
 
 as.numeric(names(cooksd)[(cooksd > 15*mean(cooksd, na.rm=T))])
 ```
+
+![Alt text](https://github.com/ur4me/Titanic/blob/master/Outliers.png)
+
 I will remove 648, 680, 738 rows
 ```
 train <- train[-c(648,680,738),]
