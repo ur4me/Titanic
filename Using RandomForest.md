@@ -21,7 +21,7 @@ library(hydroGOF)
 setwd('c:/Kaggle/titanic') #Location where I saved train.csv and test.csv files
 ```
 
-We need to Combine train.csv and test.csv files in order to fill up the missing values. I will change brank cells to NAs as it is easier to fill up the missing values. 
+I need to Combine train.csv and test.csv files in order to fill up the missing values. I will change brank cells to NAs as it is easier to fill up the missing values. 
 ```
 #Combine train.csv and test.csv files
 train <- read.csv('train.csv', na.strings = c("", "NA"), stringsAsFactors = F)
@@ -29,7 +29,7 @@ test <- read.csv('test.csv', na.strings = c("", "NA"), stringsAsFactors = F)
 total <- bind_rows(train, test)
 ```
 #### Adding new column
-It would be really good if I can make as many new variables as possible. However, in order to use tree function, factor predictors must have at most 32 levels. In other words, actual people's name and ticket numbers will not play important role in the prediction as they have more than 32 levels. But the title which is stated in their name will be really meaningful as it will have less than 32 levels. Furthermore, I can retrieve deck names from Cabin Column. Lastly, I can make family size column from SibSp and Parch column.
+The title which is stated in their name will be really meaningful. Furthermore, I can retrieve deck names from Cabin Column. Lastly, I can make family size column from SibSp and Parch column.
 
 ```
 #make Title column
@@ -50,7 +50,7 @@ female            1
 male              0
 ```
 
-The levels are less than 32 so it seems like I can use this information to tree function. Now, I am going to make Family size column and Deck column.
+Now, I am going to make Family size column and Deck column.
 
 ```
 #make family size column that contains the passenger themselves
