@@ -12,7 +12,7 @@
 ## Introduction
 
 This is my first project that is uploaded on github so there should be much better way to predict the survivors.
-As for this time, I will use tree function to make Machine Learning model. In order to use tree function, it is really important to know the types of variables so that I can change the types to appropriate ones. 
+As for this time, I will use decision tree to make Machine Learning model. In order to use decision tree model, it is really important to know the types of variables so that I can change the types to appropriate ones. 
 
 
 ## Preparation
@@ -36,7 +36,7 @@ test <- read.csv('test.csv', na.strings = c("", "NA"), stringsAsFactors = F)
 total <- bind_rows(train, test)
 ```
 #### Adding new column
-It would be really good if I can make as many new variables as possible. However, in order to use tree function, factor predictors must have at most 32 levels. In other words, actual people's name and ticket numbers will not play important role in the prediction as they have more than 32 levels. But the title which is stated in their name will be really meaningful as it will have less than 32 levels. Furthermore, I can retrieve deck names from Cabin Column. Lastly, I can make family size column from SibSp and Parch column.
+It would be really good if I can make as many new variables as possible. However, in order to use decision tree model, factor predictors must have at most 32 levels. In other words, actual people's name and ticket numbers will not play important role in the prediction as they have more than 32 levels. But the title which is stated in their name will be really meaningful as it will have less than 32 levels. Furthermore, I can retrieve deck names from Cabin Column. Lastly, I can make family size column from SibSp and Parch column.
 
 ```
 #make Title column
@@ -57,7 +57,7 @@ table(total$Sex, total$Title)
   male              0
 ```
 
-The levels are less than 32 so it seems like I can use this information to tree function. Now, I am going to make Family size column and Deck column.
+The levels are less than 32 so it seems like I can use this information to decision tree. Now, I am going to make Family size column and Deck column.
 
 ```
 #make family size column that contains the passenger themselves
@@ -74,7 +74,7 @@ colnames(total)[colSums(is.na(total)) > 0]
 
 [1] "Survived" "Age"      "Fare"     "Cabin"    "Embarked" "Deck" 
 ```
-I don't need to fill up the missing values in Cabin column as not only it contains more than 32 levels, but also I already retrieved more meaningful values to Deck column. As I will predict the survivors in the final step, I should fill up the missing values. I will use tree function to expect the missing values. In order to use tree function, Char need to be changed to Factor.
+I don't need to fill up the missing values in Cabin column as not only it contains more than 32 levels, but also I already retrieved more meaningful values to Deck column. As I will predict the survivors in the final step, I should fill up the missing values. I will use decision tree to expect the missing values. In order to use decision tree model, Char need to be changed to Factor.
 ```
 #Change Char to Factor
 total <- as.data.frame(unclass(total))
@@ -103,7 +103,7 @@ str(total)
 #Get rows that contain NAs in Age column
 missing_age <- total[which(is.na(total$Age)),]
 
-#make tree model (Do not choose PassengerId column, Survived column and the column with more than 32 levels. 
+#make decision tree model (Do not choose PassengerId column, Survived column and the column with more than 32 levels. 
 model <- tree(formula = Age ~ Pclass + Sex + SibSp + Parch + Fare + Embarked + Title + FamilySize + Deck, data = total)
 
 #predict the NAs with the model
@@ -119,7 +119,7 @@ I will use very similar way to fill up the missing values for other columns
 #Get rows that contain NAs in Fare column
 missing_fare <- total[which(is.na(total$Fare)),]
 
-#make tree model 
+#make decision tree model 
 model <- tree(formula = Fare ~ Pclass + Sex + Age + SibSp + Parch + Embarked + Title + FamilySize + Deck, data = total)
 
 #predict the NAs with the model
@@ -131,7 +131,7 @@ total$Fare[is.na(total$Fare)] <- prediction
 #Get rows that contain NAs in Embarked column
 missing_embarked <- total[which(is.na(total$Embarked)),]
 
-#make tree model 
+#make decision tree model 
 model <- tree(formula = Embarked ~ Pclass + Sex + Age + SibSp + Parch + Fare + Title + FamilySize + Deck, data = total)
 
 #predict the NAs with the model
@@ -161,7 +161,7 @@ total$Embarked[is.na(total$Embarked)] <- prediction
 #Get rows that contain NAs in Deck column
 missing_deck <- total[which(is.na(total$Deck)),]
 
-#make tree model 
+#make decision tree model 
 model <- tree(formula = Deck ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked + Title + FamilySize, data = total)
 
 #predict the NAs with the model
