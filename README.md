@@ -12,7 +12,7 @@
 ## Introduction
 
 This is my first project that is uploaded on github so there should be much better way to predict the survivors.
-As for this time, I will use decision tree to make Machine Learning model. In order to use decision tree model, it is really important to know the types of variables so that I can change the types to appropriate ones. 
+As for this time, I will use decision tree to make Machine Learning model. In order to use decision tree model, it is really important to know the types of variables.
 
 
 ## Preparation
@@ -202,4 +202,4 @@ write.csv(solution, file = 'my_second_Solution.csv', row.names=F)
 ```
 
 ## Conclusion
-I got 79% accuracy for this one which seems to be not that bad for the first outcome. From next project I need to think about outliers and better ML model to solve problems.
+I got 79% accuracy for this one which seems to be not that bad for the first outcome. From next project I will use better ML model, exploratory data analysis, better ways to treat outliers & missing values and so on.
