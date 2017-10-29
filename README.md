@@ -6,7 +6,7 @@
 - [Introduction](#introduction)
 - [Preparation](#preparation)
 - [Prediction](#prediction)
-- [Conclusion](#conclusion)
+
 
 
 ## Introduction
@@ -119,5 +119,4 @@ solution <- data.frame(PassengerId = test$PassengerId, Survived = prediction)
 write.csv(solution, file = 'random_forest_Sol2.csv', row.names = F)
 ```
 
-## Conclusion
-I got 79% accuracy which seems to be not that bad for the first outcome. Accuracy should be increased by using better ML model, parameter tuning, cross validation, exploratory data analysis and so on.
+
