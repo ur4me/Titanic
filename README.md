@@ -81,11 +81,14 @@ What does our family size variable look like? To help us understand how it may r
 We can see that there’s a survival penalty to singletons and those with family sizes above 4. We can collapse this variable into three levels which will be helpful since there are comparatively fewer large families. 
 
 #### Filling up missing values
-Before imputation, I will remove some variables and change categorical to factors
+Before imputation, I will remove some variables and change categorical to factors.
 ```
 total1 <- total[,-c(1,2,4,9,11)]
 total1 <- as.data.frame(unclass(total1))
 ```
+
+I will impute missing values by using Mice package.
+
 ```
 #imputing missing values
 miceMod <- mice(total1, method="rf")
@@ -95,6 +98,8 @@ colnames(miceOutput)[colSums(is.na(miceOutput)) > 0]
 ```
 
 #### Separation
+I will separate back to train and test for prediction.
+
 ```
 #separate
 train1 <- miceOutput[1:891,]
@@ -102,8 +107,11 @@ test1 <- miceOutput[892:1309,]
 ```
 
 #### Outlier handling
+
+I will use multivariate method to check outliers.
+
 ```
-#add SalePrice column to train1
+#add Survived column to train1
 Survived <- train$Survived
 train1 <- cbind(train1,Survived)
 ```
@@ -125,6 +133,9 @@ train1 <- train1[-which(cooksd >0.1),]
 ```
 
 ## Prediction
+
+I will use simple Random Forest model to predict the test set.
+
 ```
 #predict with Random Forest
 model_1 <- randomForest(Survived ~ ., data=train1)
