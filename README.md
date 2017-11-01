@@ -36,6 +36,13 @@ train <- read.csv('train.csv', na.strings = c("", "NA"), stringsAsFactors = F)
 test <- read.csv('test.csv', na.strings = c("", "NA"), stringsAsFactors = F)
 total <- bind_rows(train, test)
 ```
+
+#### Exploratory analysis
+I will used Tableau for visualise our data.
+First of all, I will see the relationship between sex and survived.
+![Alt text](https://github.com/ur4me/Titanic/blob/master/Relationship%20between%20Sex%20and%20Survived.PNG)
+
+
 #### Adding new column
 ```
 #make Title column
