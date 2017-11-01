@@ -37,12 +37,6 @@ test <- read.csv('test.csv', na.strings = c("", "NA"), stringsAsFactors = F)
 total <- bind_rows(train, test)
 ```
 
-#### Exploratory analysis
-I will used Tableau for visualise our data.
-First of all, I will see the relationship between sex and survived.
-![Alt text](https://github.com/ur4me/Titanic/blob/master/Relationship%20between%20Sex%20and%20Survived.PNG)
-
-
 #### Adding new column
 ```
 #make Title column
@@ -71,6 +65,20 @@ total$FamilySize <- total$SibSp + total$Parch + 1
 #make Deck column
 total$Deck <- factor(sapply(total$Cabin, function(x) strsplit(x, NULL)[[1]][1]))
 ```
+
+#### Exploratory analysis
+I will used Tableau for visualise our data.
+First of all, I will see the relationship between sex and survived.
+
+![Alt text](https://github.com/ur4me/Titanic/blob/master/Relationship%20between%20Sex%20and%20Survived.PNG)
+
+As we expected, the proportion of survived female was much higher than that of male.
+
+What does our family size variable look like? To help us understand how it may relate to survival, I will also use Tableau and plot it.
+
+![Alt text](https://github.com/ur4me/Titanic/blob/master/Family%20Size.PNG)
+
+We can see that there’s a survival penalty to singletons and those with family sizes above 4. We can collapse this variable into three levels which will be helpful since there are comparatively fewer large families. 
 
 #### Filling up missing values
 Before imputation, I will remove some variables and change categorical to factors
