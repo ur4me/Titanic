@@ -1,0 +1,152 @@
+---
+title: "Predict survival on the Titanic"
+author: "Jin Yong Kim"
+date: "2 November 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Predict survival on the Titanic
+
+### Introduction
+
+This is my first project that is uploaded on github so there should be much better way to predict the survivors. As for this time, I will use RandomForest to make Machine Learning model and predict test data set.
+
+
+### Preparation
+
+##### Initial works
+
+```{r}
+#Load packages
+library(mice)
+library(dplyr)
+library(randomForest)
+library(caret)
+```
+
+```{r}
+#Set up Working directory
+setwd('c:/Kaggle/titanic')  #Location where I saved train.csv and test.csv files
+```
+
+We need to combine train.csv and test.csv files in order to fill up the missing values. I will change brank cells to NAs as it is easier to fill up the missing values.
+
+```{r}
+#Combine train.csv and test.csv files
+train <- read.csv('train.csv', na.strings = c("", "NA"), stringsAsFactors = F)
+test <- read.csv('test.csv', na.strings = c("", "NA"), stringsAsFactors = F)
+total <- bind_rows(train, test)
+```
+
+##### Adding new column
+
+```{r}
+#make Title column
+total$Title <- gsub('(.*, )|(\\..*)', '', total$Name)
+total$Title[total$Title == 'Mlle'] <- 'Miss'
+total$Title[total$Title == 'Ms'] <- 'Miss'
+total$Title[total$Title == 'Mme'] <- 'Mrs'
+```
+```{r}
+#check title counts by sex
+table(total$Sex, total$Title)
+```
+
+Now, I am going to make Family size column and Deck column.
+
+```{r}
+#make family size column that contains the passenger themselves
+total$FamilySize <- total$SibSp + total$Parch + 1
+#make Deck column
+total$Deck <- factor(sapply(total$Cabin, function(x) strsplit(x, NULL)[[1]][1]))
+```
+
+##### Exploratory analysis
+
+I will used Tableau for visualise our data. First of all, I will see the relationship between sex and survived.
+
+<img src="Relationship between Sex and Survived.PNG">
+
+As we expected, the proportion of survived female was much higher than that of male.
+
+What does our family size variable look like? To help us understand how it may relate to survival, I will also use Tableau and plot it.
+
+<img src="Family Size.PNG">
+
+We can see that there's a survival penalty to singletons and those with family sizes above 4. We can collapse this variable into three levels which will be helpful since there are comparatively fewer large families.
+
+##### Filling up missing values
+
+Before imputation, I will remove some variables and change categorical to factors.
+
+```{r}
+total1 <- total[,-c(1,2,4,9,11)]
+total1 <- as.data.frame(unclass(total1))
+```
+
+I will impute missing values by using Mice package.
+
+```{r}
+#imputing missing values
+miceMod <- mice(total1, method="rf")
+miceOutput <- complete(miceMod)
+#Check whether there is missing values
+colnames(miceOutput)[colSums(is.na(miceOutput)) > 0]
+```
+
+##### Separation 
+
+I will separate back to train and test for prediction.
+
+```{r}
+#separate
+train1 <- miceOutput[1:891,]
+test1 <- miceOutput[892:1309,]
+```
+
+
+### Prediction 
+
+I will devide train set to training and testing to check accuracy.
+
+```{r}
+#add Survived column to train1
+Survived <- train$Survived
+train1 <- cbind(train1,Survived)
+train1$Survived <- as.factor(train1$Survived)
+```
+
+```{r}
+#split train
+set.seed(54321)
+outcome <- train1$Survived
+
+partition <- createDataPartition(y=outcome,
+                                 p=.7,
+                                 list=F)
+training <- train1[partition,]
+testing <- train1[-partition,]
+```
+
+I will use simple Random Forest model to predict testing and check accuracy of a model.
+
+```{r}
+#predict with Random Forest
+model_1 <- randomForest(Survived ~ ., data=training)
+prediction <- predict(model_1, testing)
+```
+
+```{r}
+confusionMatrix(prediction, testing$Survived)
+```
+
+```{r}
+#predict, save and submit
+prediction <- predict(model_1, test1)
+solution <- data.frame(PassengerId = test$PassengerId, Survived = prediction)
+write.csv(solution, file = 'randomforest_Sol.csv', row.names = F)
+```
