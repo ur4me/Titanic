@@ -1,0 +1,12 @@
+name: titanic2
+title: titanic2
+username:
+account: jinyongkim
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 231806
+bundleId: 1059644
+url: https://jinyongkim.shinyapps.io/titanic2/
+when: 1509866935.7504
+asMultiple: FALSE
+asStatic: FALSE

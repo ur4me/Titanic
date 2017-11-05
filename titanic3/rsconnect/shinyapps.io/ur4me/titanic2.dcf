@@ -1,0 +1,12 @@
+name: titanic2
+title: titanic2
+username:
+account: ur4me
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 231807
+bundleId: 1058548
+url: https://ur4me.shinyapps.io/titanic2/
+when: 1509756198.97113
+asMultiple: FALSE
+asStatic: FALSE

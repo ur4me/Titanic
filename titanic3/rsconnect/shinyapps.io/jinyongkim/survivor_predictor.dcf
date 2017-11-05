@@ -1,0 +1,12 @@
+name: survivor_predictor
+title: survivor_predictor
+username:
+account: jinyongkim
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 231805
+bundleId: 1058544
+url: https://jinyongkim.shinyapps.io/survivor_predictor/
+when: 1509755615.99398
+asMultiple: FALSE
+asStatic: FALSE
