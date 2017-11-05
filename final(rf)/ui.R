@@ -1,0 +1,61 @@
+library(shiny)
+shinyUI(pageWithSidebar(
+  headerPanel("Titanic Survival Calculator"),
+  sidebarPanel(
+    p("Select person attributes to calculate his/her chances of surviving of the titanic sinking."),
+    radioButtons("Pclass", label = h3("Ticket class:"),
+                 choices = list("1st" = "1", "2nd" = "2", "3rd" = "3"), 
+                 selected = "2"),
+    radioButtons("Sex", label = h3("Sex:"),
+                 choices = list("male" = "male", "female" = "female"), 
+                 selected = "female"),
+    sliderInput(
+      inputId = "Age",
+      label = h3("Age:"),
+      min = 0.0,
+      max = 100,
+      step = 0.5,
+      value = 17),
+    sliderInput(
+      inputId = "SibSp",
+      label = h3("Number of Siblings/spouses:"),
+      min = 0.0,
+      max = 9,
+      step = 1,
+      value = 1),
+    sliderInput(
+      inputId = "Parch",
+      label = h3("Number of Parents/Children:"),
+      min = 0.0,
+      max = 7,
+      step = 1,
+      value = 1),
+    sliderInput(
+      inputId = "Fare",
+      label = h3("Passenger Fare:"),
+      min = 0.0,
+      max = 550,
+      step = 0.5,
+      value = 20),
+    radioButtons("Embarked", label = h3("Port of Embarkation:"),
+                 choices = list("Cherbourg" = "C", "Queenstown" = "Q", "Southampton" = "S"), 
+                 selected = "Q"),
+    radioButtons("Title", label = h3("Title:"),
+                 choices = list("Mr" = "Mr", "Miss" = "Miss", "Mrs" = "Mrs","Master" = "Master", "Rare Title" = "Rare Title"), 
+                 selected = "Mr"),
+    sliderInput(
+      inputId = "FamilySize",
+      label = h3("Family Size:"),
+      min = 0.0,
+      max = 12,
+      step = 1,
+      value = 2),
+    radioButtons("Deck", label = h3("Deck:"),
+                 choices = list("A" = "A","B" = "B","C" = "C", "D" = "D","E" = "E","F" = "F", "G" = "G","T" = "T"), 
+                 selected = "C")
+  ),
+  mainPanel(
+    h3("Survival Probability:"),
+    h2(verbatimTextOutput("results")),
+    p("Please note that this is estimated probability based on a logistic regression model."),
+    p("That means this value is slightly different than historical survival rate."))))
