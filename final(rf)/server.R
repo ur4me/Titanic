@@ -17,9 +17,9 @@ modelFit <- train(Survived ~ ., data  = train1, method  = "rf")
 
 shinyServer(function(input, output){
   
-  userdf <- train1[11,]
+
   values <- reactiveValues()
-  values$df <- userdf
+
   newEntry <- observe({
     values$df$Pclass <- as.factor(input$Pclass)
     values$df$Sex <- as.factor(input$Sex)
